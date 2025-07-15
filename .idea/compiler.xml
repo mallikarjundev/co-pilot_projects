@@ -7,8 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ConsoleBasedBanking" />
+        <module name="StudentReportCardGenerator" />
+        <module name="BankingSystem" />
         <module name="TaskManagementSystem" />
+        <module name="MultiThreadTaskProcessor" />
+        <module name="LibraryManagementSystem" />
+        <module name="UserAuthSystem" />
         <module name="WeatherApp" />
+        <module name="InventoryManagementSystem" />
+        <module name="InMemoryCacheSystem" />
       </profile>
     </annotationProcessing>
   </component>

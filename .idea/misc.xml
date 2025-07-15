@@ -6,10 +6,18 @@
       <list>
         <option value="$PROJECT_DIR$/WeatherApp/pom.xml" />
         <option value="$PROJECT_DIR$/TaskManagementSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/ConsoleBasedBanking/pom.xml" />
+        <option value="$PROJECT_DIR$/StudentReportCardGenerator/pom.xml" />
+        <option value="$PROJECT_DIR$/LibraryManagementSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/InventoryManagementSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/BankingSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/UserAuthSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/MultiThreadTaskProcessor/pom.xml" />
+        <option value="$PROJECT_DIR$/InMemoryCacheSystem/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="ms-11 (2)" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
