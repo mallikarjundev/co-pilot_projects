@@ -14,6 +14,8 @@
         <option value="$PROJECT_DIR$/UserAuthSystem/pom.xml" />
         <option value="$PROJECT_DIR$/MultiThreadTaskProcessor/pom.xml" />
         <option value="$PROJECT_DIR$/InMemoryCacheSystem/pom.xml" />
+        <option value="$PROJECT_DIR$/MTFileSearchEngine/pom.xml" />
+        <option value="$PROJECT_DIR$/WebPageDownloader/pom.xml" />
       </list>
     </option>
   </component>

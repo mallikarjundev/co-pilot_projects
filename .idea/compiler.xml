@@ -11,7 +11,9 @@
         <module name="StudentReportCardGenerator" />
         <module name="BankingSystem" />
         <module name="TaskManagementSystem" />
+        <module name="WebPageDownloader" />
         <module name="MultiThreadTaskProcessor" />
+        <module name="MTFileSearchEngine" />
         <module name="LibraryManagementSystem" />
         <module name="UserAuthSystem" />
         <module name="WeatherApp" />

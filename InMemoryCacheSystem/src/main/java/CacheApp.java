@@ -2,11 +2,15 @@ import java.util.Scanner;
 
 public class CacheApp {
     public static void main(String[] args) {
-        Cache<String,String> cache = new Cache<>();
+
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter max cache size (for LRU): ");
+        int maxSize = Integer.parseInt(sc.nextLine());
+
+        Cache<String,String> cache = new Cache<>(maxSize);
         boolean running = true;
 
-        System.out.println("🗃️ In-Memory Cache Started (with TTL)");
+        System.out.println("🧠 In-Memory Cache with TTL + LRU Eviction");
 
         while (running){
             System.out.println("\n1. Put  2. Get  3. Remove  4. Size  0. Exit");

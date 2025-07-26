@@ -1,22 +1,34 @@
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Cache<K,V> {
-    private final ConcurrentHashMap<K,CacheEntry<V>> store = new ConcurrentHashMap<>();
-    private final ScheduledExecutorService cleaner = Executors.newSingleThreadScheduledExecutor();
+    private final int maxCapacity;
+    private final Map<K,CacheEntry<V>> store;
+    private final Timer cleanerTimer;
 
-    public Cache(){
+    public Cache(int maxCapacity){
+
+        this.maxCapacity=maxCapacity;
+        this.store = new LinkedHashMap<>(16,0.75f,true){
+            @Override
+            protected boolean removeEldestEntry(Map.Entry<K, CacheEntry<V>> eldest) {
+                return size()>Cache.this.maxCapacity;
+            }
+        };
+        this.cleanerTimer=new Timer(true);
         startCleaner();
     }
 
-    public void put(K key, V value, long ttlMillis){
+
+
+    public synchronized void put(K key, V value, long ttlMillis){
         store.put(key,new CacheEntry<>(value,ttlMillis));
     }
 
-    public V get(K key){
+    public synchronized V get(K key){
         CacheEntry<V> entry = store.get(key);
         if (entry==null || entry.isExpired()){
             store.remove(key);
@@ -26,11 +38,11 @@ public class Cache<K,V> {
         return entry.getValue();
     }
 
-    public void remove(K key){
+    public synchronized void remove(K key){
         store.remove(key);
     }
 
-    public void clear(){
+    public synchronized void clear(){
         store.clear();
     }
 
@@ -39,17 +51,24 @@ public class Cache<K,V> {
     }
 
     private void startCleaner(){
-        cleaner.scheduleAtFixedRate(()->{
-            for (Map.Entry<K,CacheEntry<V>> entry:store.entrySet()){
-                if (entry.getValue().isExpired()){
-                    store.remove(entry.getKey());
-                    System.out.println("Removed expired key: "+entry.getKey());
+        cleanerTimer.scheduleAtFixedRate(new TimerTask(){
+            public void run(){
+                synchronized (Cache.this){
+                    Iterator<Map.Entry<K,CacheEntry<V>>> iterator = store.entrySet().iterator();
+                    while (iterator.hasNext()){
+                        Map.Entry<K,CacheEntry<V>> entry = iterator.next();
+                        if (entry.getValue().isExpired()){
+                            iterator.remove();
+                            System.out.println("Removed expired key: "+entry.getKey());
+                        }
+                    }
                 }
             }
-        },5,5, TimeUnit.SECONDS);
+
+        },5000,5000);
     }
 
     public void shutdown(){
-        cleaner.shutdown();
+        cleanerTimer.cancel();
     }
 }
