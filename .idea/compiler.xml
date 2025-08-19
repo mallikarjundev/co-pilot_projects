@@ -9,16 +9,24 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ConsoleBasedBanking" />
         <module name="StudentReportCardGenerator" />
-        <module name="BankingSystem" />
+        <module name="ServerStartupSimulation" />
         <module name="TaskManagementSystem" />
-        <module name="WebPageDownloader" />
+        <module name="TaskScehdulerApp" />
         <module name="MultiThreadTaskProcessor" />
-        <module name="MTFileSearchEngine" />
+        <module name="ProductCatalog" />
+        <module name="MultiStageTaskSimulation" />
         <module name="LibraryManagementSystem" />
+        <module name="ProdConsWithBlockQ" />
         <module name="UserAuthSystem" />
-        <module name="WeatherApp" />
+        <module name="ThreadSafeCacheWithExpiry" />
+        <module name="stock-aggregator" />
         <module name="InventoryManagementSystem" />
         <module name="InMemoryCacheSystem" />
+        <module name="BankingSystem" />
+        <module name="WebPageDownloader" />
+        <module name="MTFileSearchEngine" />
+        <module name="WeatherApp" />
+        <module name="ConnectionPoolSimulator" />
       </profile>
     </annotationProcessing>
   </component>

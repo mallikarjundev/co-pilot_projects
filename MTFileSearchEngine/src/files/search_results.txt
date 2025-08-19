@@ -1,0 +1,6 @@
+File: abc.txt              Line 1: abcdeef
+File: abc.txt              Line 3: afdnk
+File: aa.txt               Line 2: abc
+File: ret.txt              Line 2: af
+File: ret.txt              Line 5: abc
+Total Hits across all files: 5

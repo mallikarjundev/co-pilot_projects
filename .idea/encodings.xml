@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/BankingSystem/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/BankingSystem/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ConnectionPoolSimulator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ConnectionPoolSimulator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ConsoleBasedBanking/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ConsoleBasedBanking/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/InMemoryCacheSystem/src/main/java" charset="UTF-8" />
@@ -13,15 +15,29 @@
     <file url="file://$PROJECT_DIR$/LibraryManagementSystem/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MTFileSearchEngine/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MTFileSearchEngine/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MultiStageTaskSimulation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MultiStageTaskSimulation/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MultiThreadTaskProcessor/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/MultiThreadTaskProcessor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProdConsWithBlockQ/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProdConsWithBlockQ/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProductCatalog/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ProductCatalog/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Server Startup Simulation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Server Startup Simulation/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/StudentReportCardGenerator/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/StudentReportCardGenerator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TaskManagementSystem/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TaskManagementSystem/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TaskScehdulerApp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TaskScehdulerApp/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ThreadSafeCacheWithExpiry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ThreadSafeCacheWithExpiry/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UserAuthSystem/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/UserAuthSystem/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebPageDownloader/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebPageDownloader/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/stock-aggregator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/stock-aggregator/src/main/resources" charset="UTF-8" />
   </component>
 </project>

@@ -16,6 +16,14 @@
         <option value="$PROJECT_DIR$/InMemoryCacheSystem/pom.xml" />
         <option value="$PROJECT_DIR$/MTFileSearchEngine/pom.xml" />
         <option value="$PROJECT_DIR$/WebPageDownloader/pom.xml" />
+        <option value="$PROJECT_DIR$/ThreadSafeCacheWithExpiry/pom.xml" />
+        <option value="$PROJECT_DIR$/TaskScehdulerApp/pom.xml" />
+        <option value="$PROJECT_DIR$/ProductCatalog/pom.xml" />
+        <option value="$PROJECT_DIR$/ProdConsWithBlockQ/pom.xml" />
+        <option value="$PROJECT_DIR$/ConnectionPoolSimulator/pom.xml" />
+        <option value="$PROJECT_DIR$/Server Startup Simulation/pom.xml" />
+        <option value="$PROJECT_DIR$/MultiStageTaskSimulation/pom.xml" />
+        <option value="$PROJECT_DIR$/stock-aggregator/pom.xml" />
       </list>
     </option>
   </component>
