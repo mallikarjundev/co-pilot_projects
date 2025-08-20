@@ -36,4 +36,13 @@ public class StockPrice {
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "StockPrice{" +
+                "symbol='" + symbol + '\'' +
+                ", price=" + price +
+                ", timestamp=" + timestamp +
+                '}';
+    }
 }
