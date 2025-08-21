@@ -1,6 +1,8 @@
 package com.arjun.stock.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Formatter;
 
 public class StockPrice {
     private String symbol;
@@ -39,10 +41,7 @@ public class StockPrice {
 
     @Override
     public String toString() {
-        return "StockPrice{" +
-                "symbol='" + symbol + '\'' +
-                ", price=" + price +
-                ", timestamp=" + timestamp +
-                '}';
+        return String.format(
+                "StockPrice{ symbol='%s', price=%.2f, timestamp=%s }",symbol,price,timestamp.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 }
