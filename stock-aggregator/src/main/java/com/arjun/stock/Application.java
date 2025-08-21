@@ -2,13 +2,15 @@ package com.arjun.stock;
 
 import com.arjun.stock.api.MockStockApiClient;
 import com.arjun.stock.api.StockApiClient;
+import com.arjun.stock.api.StockPriceFetcherTask;
 import com.arjun.stock.model.StockPrice;
 import com.arjun.stock.service.StockPriceService;
 import com.arjun.stock.service.impl.StockPriceServiceImpl;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.*;
 
 /**
  * Hello world!
@@ -16,34 +18,31 @@ import java.util.concurrent.TimeUnit;
  */
 public class Application
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws ExecutionException, InterruptedException {
 
-        StockApiClient apiClient = new MockStockApiClient();
-
-        StockPriceService stockPriceService = new StockPriceServiceImpl(apiClient);
+        StockPriceService stockPriceService = new StockPriceServiceImpl(new MockStockApiClient());
 
         // Test with a few sample stock symbols
-        String[] symbols = {"AAPL","GOOGL","AMZN"};
+        List<String> symbols = Arrays.asList("AAPL","GOOGL","AMZN");
 
         // Create a scheduler
-        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+//        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
 
-        Runnable fetchTask = () -> {
-            System.out.println("===== Fetching stock prices ====");
+        ExecutorService executor = Executors.newFixedThreadPool(4);
+        List<Future<StockPrice>> futures = new ArrayList<>();
+
             for (String symbol: symbols){
-                StockPrice stockPrice = stockPriceService.getStockPrice(symbol);
-                System.out.println(stockPrice);
+                StockPriceFetcherTask task = new StockPriceFetcherTask(symbol,stockPriceService);
+                futures.add(executor.submit(task));
             }
-            System.out.println("===========================================================");
-        };
 
-        scheduler.scheduleAtFixedRate(fetchTask,0,5, TimeUnit.SECONDS);
+            for (Future<StockPrice> future:futures){
+                StockPrice stockPrice = future.get();
+                System.out.println("Fetched stock: "+stockPrice);
+            }
 
-        scheduler.schedule(()->{
-            System.out.println("Stopping scheduler....");
-            scheduler.shutdown();
-        },30,TimeUnit.SECONDS);
+
+        executor.shutdown();
 
     }
 }
